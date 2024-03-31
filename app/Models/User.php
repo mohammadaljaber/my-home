@@ -42,4 +42,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    protected $guarded=[];
+    public function sender(){
+        return $this->hasMany(Chat_user::class,'sender_id','id');
+    }
+    public function reciver(){
+        return $this->hasMany(Chat_user::class,'reciver_id','id');
+    }
+    public function mes_sender(){
+        return $this->hasMany(Message::class,'sender_id','id');
+    }
+    public function mes_reciver(){
+        return $this->hasMany(Message::class,'reciver_id','id');
+    }
 }
