@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ownership_type;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,4 +18,8 @@ class House extends Model
         ->withPivot('value')
         ->withTimestamps();
     }
+    protected $casts = [
+        'ownership_type' =>ownership_type::class ,
+    ];
+
 }

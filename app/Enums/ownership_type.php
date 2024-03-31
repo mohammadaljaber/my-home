@@ -1,7 +1,8 @@
 <?php
 namespace App\Enums;
 
-enum ownership_type :string{
+enum ownership_type :string
+{
     
 }
 
