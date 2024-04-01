@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('value');
             $table->unsignedBigInteger('proprety_id');
             $table->unsignedBigInteger('house_id');
-            $table->string('ownership_type');
             $table->foreign('proprety_id')->references('id')->on('properties');
             $table->foreign('house_id')->references('houses')->on('house_id');
             $table->timestamps();

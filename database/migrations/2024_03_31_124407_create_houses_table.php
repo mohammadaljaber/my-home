@@ -17,6 +17,7 @@ return new class extends Migration
             $table->double('lat_loc');
             $table->boolean('is_for_sell');
             $table->double('price');
+            $table->string('ownership_type');
             $table->unsignedInteger('viewers_count');
             $table->timestamps();
         });
