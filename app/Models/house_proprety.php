@@ -12,4 +12,8 @@ class house_proprety extends Model
     public function property(){
         return $this->belongsTo(Property::class,'property_id','id');
     }
+
+    public function propert(){
+        return $this->belongsTo(Property::class,'property_id','id');
+    }
 }
