@@ -9,7 +9,7 @@ class house_proprety extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    public function proprety(){
-        return $this->belongsTo(Property::class,'proprety_id','id');
+    public function property(){
+        return $this->belongsTo(Property::class,'property_id','id');
     }
 }
