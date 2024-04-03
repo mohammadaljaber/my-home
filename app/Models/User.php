@@ -43,11 +43,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
     protected $guarded=[];
-    public function sender(){
-        return $this->hasMany(Chat_user::class,'sender_id','id');
+    public function f_user(){
+        return $this->hasMany(Chat::class,'f_user','id');
     }
-    public function reciver(){
-        return $this->hasMany(Chat_user::class,'reciver_id','id');
+    public function l_user(){
+        return $this->hasMany(Chat::class,'l_user','id');
     }
     public function mes_sender(){
         return $this->hasMany(Message::class,'sender_id','id');

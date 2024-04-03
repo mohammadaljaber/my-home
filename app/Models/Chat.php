@@ -10,8 +10,11 @@ class Chat extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function chat_user(){
-        return $this->hasOne(Chat_user::class,'chat_id','id');
+    public function f_user(){
+        return $this->belongsTo(User::class,'f_user','id');
+    }
+    public function l_user(){
+        return $this->belongsTo(User::class,'l_user','id');
     }
     public function messages(){
         return $this->hasMany(Message::class,'chat_id','id');
