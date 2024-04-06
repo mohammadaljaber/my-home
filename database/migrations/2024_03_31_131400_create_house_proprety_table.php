@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('house_proprety', function (Blueprint $table) {
             $table->id();
             $table->string('value');
-            $table->unsignedBigInteger('proprety_id');
+            $table->unsignedBigInteger('property_id');
             $table->unsignedBigInteger('house_id');
-            $table->foreign('proprety_id')->references('id')->on('properties');
-            $table->foreign('house_id')->references('houses')->on('house_id');
+            $table->foreign('property_id')->references('id')->on('properties');
+            $table->foreign('house_id')->references('id')->on('houses');
             $table->timestamps();
         });
     }

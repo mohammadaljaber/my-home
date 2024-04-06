@@ -14,3 +14,4 @@ class house_proprety extends Model
     } 
     
     }
+
