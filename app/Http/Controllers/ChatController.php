@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\sendmessage;
 use App\Models\Chat;
+use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,4 +41,20 @@ class ChatController extends Controller
         }
         return response()->json(['message'=>$request->message],200);
     }
+
+    public function recive_message(Request $request){
+        Message::where('id',$request->id)->update([
+            'status'=>'1'
+        ]);
+        return response()->json(['message'=>'message recived'],200);
+    }
+    public function read_message($id){
+        Message::where('id',$id)->update([
+            'status'=>'2'
+        ]);
+        return response()->json(['message'=>'the message has been read'],200);
+    }
+
+
+
 }
