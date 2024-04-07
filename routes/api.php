@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\authcontroller;
+use App\Http\Controllers\ChatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login',[authcontroller::class,'login']);
 Route::group(['middleware'=>'auth:sanctum'],function(){
-    
+    Route::post('send-message',[ChatController::class,'send']);
+    Route::post('recive_message',[ChatController::class,'recive_message']);
+    Route::post('read_message',[ChatController::class,'read_message']);
 });

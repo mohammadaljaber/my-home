@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sender_id');
-            $table->unsignedBigInteger('reciver_id');
+            $table->unsignedBigInteger('receiver_id');
             $table->unsignedBigInteger('chat_id');
             $table->foreign('chat_id')->references('id')->on('chats');
             $table->foreign('sender_id')->references('id')->on('users');
-            $table->foreign('reciver_id')->references('id')->on('users');
+            $table->foreign('receiver_id')->references('id')->on('users');
             $table->longText('text');
-            $table->tinyInteger('status')->comment('0=>send , 1=>recive , 2=>show');
+            $table->tinyInteger('status')->comment('0 => sent, 1 => received, 2 => seen');
             $table->timestamps();
         });
     }
