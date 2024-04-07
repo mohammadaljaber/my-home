@@ -2,16 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\sendmessage;
 use App\Models\Chat;
-use App\Models\Message;
 use App\Models\User;
+use App\Models\Message;
+use App\Events\sendmessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ChatController extends Controller
 {
     public function send(Request $request){
+        $validator = Validator::make($request->all(), [
+            'message' => ['required', 'string'],
+            'receiver' => ['required'],
+        ]);
+        if ($validator->fails()) {
+            return response()->json(
+                $validator->errors(),
+                403
+            );
+        }
         $user = Auth::user();
         $receiver = User::find($request->receiver);
         $chat = Chat::where(function($query) use ($user, $receiver) {
