@@ -13,8 +13,8 @@ class Chat extends Model
     public function f_user(){
         return $this->belongsTo(User::class,'f_user','id');
     }
-    public function l_user(){
-        return $this->belongsTo(User::class,'l_user','id');
+    public function s_user(){
+        return $this->belongsTo(User::class,'s_user','id');
     }
     public function messages(){
         return $this->hasMany(Message::class,'chat_id','id');

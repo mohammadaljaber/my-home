@@ -46,13 +46,13 @@ class User extends Authenticatable
     public function f_user(){
         return $this->hasMany(Chat::class,'f_user','id');
     }
-    public function l_user(){
-        return $this->hasMany(Chat::class,'l_user','id');
+    public function s_user(){
+        return $this->hasMany(Chat::class,'s_user','id');
     }
     public function mes_sender(){
         return $this->hasMany(Message::class,'sender_id','id');
     }
     public function mes_reciver(){
-        return $this->hasMany(Message::class,'reciver_id','id');
+        return $this->hasMany(Message::class,'receiver_id','id');
     }
 }
