@@ -38,11 +38,11 @@ class ChatController extends Controller
         }
         $chat->messages()->create([
             'sender_id'=> $user->id,
-            'receiver_id'=> $receiver,
+            'receiver_id'=> $receiver->id,
             'text' => $request->message,
             'status' => '0',
         ]);
-        broadcast(new sendmessage($receiver->id,$request->message));
+        broadcast(new sendmessage($receiver,$request->message));
         return response()->json(['message'=>$request->message],200);
     }
 
