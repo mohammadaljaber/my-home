@@ -19,7 +19,7 @@ class ChatController extends Controller
         ];
         $validator = Validator::make($request->all(),$rules);
         if ($validator->fails()) return response()->json($validator->errors(), 403);
-        $user = Auth::user();
+        $user = auth()->user();
         $receiver = User::find($request->receiver);
         $chat = Chat::where(function($query) use ($user, $receiver) {
             $query->where('f_user',$user->id)->where('s_user',$receiver->id);
