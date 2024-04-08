@@ -52,7 +52,7 @@ class User extends Authenticatable
     public function mes_sender(){
         return $this->hasMany(Message::class,'sender_id','id');
     }
-    public function mes_reciver(){
+    public function mes_receiver(){
         return $this->hasMany(Message::class,'receiver_id','id');
     }
 }

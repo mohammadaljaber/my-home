@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('house_id');
             $table->string('path');
-            $table->boolean('is_main')->comment('1 => main ,0=> not main');
+            $table->boolean('is_main')->comment('1 => main, 0 => not main');
             $table->foreign('house_id')->references('id')->on('houses');
 
             $table->timestamps();
