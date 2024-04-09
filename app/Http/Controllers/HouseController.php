@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\For_Sale;
+use App\Filters\Ownership_Type;
 use App\Filters\price;
 use App\Filters\Space;
 use App\Models\House;
 use App\Models\House_property;
 use App\Models\Image;
-use Closure;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Pipeline;
 use Illuminate\Support\Facades\Validator;
@@ -57,13 +57,15 @@ class HouseController extends Controller
     public function get_houses(Request $request){
         $pip=[
             Price::class,
-            Space::class
+            Space::class,
+            For_Sale::class,
+            Ownership_Type::class
         ];
         $houses=Pipeline::send( House::query())
         ->through($pip)
         ->thenReturn()->get();
 
 
-        return $houses;
+        return response()->json($houses,200);
     }
 }

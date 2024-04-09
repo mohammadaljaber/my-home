@@ -16,7 +16,7 @@ return new class extends Migration
             $table->double('long_loc');
             $table->double('lat_loc');
             
-            $table->boolean('is_for_sell')->comment('0 => for sale, 1 => for Rent');
+            $table->boolean('is_for_sale')->comment('0 => for sale, 1 => for Rent');
             $table->double('price');
             $table->string('ownership_type')->nullable();
             $table->unsignedInteger('viewers_count');
