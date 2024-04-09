@@ -64,8 +64,6 @@ class HouseController extends Controller
         $houses=Pipeline::send( House::query())
         ->through($pip)
         ->thenReturn()->get();
-
-
         return response()->json($houses,200);
     }
 }
