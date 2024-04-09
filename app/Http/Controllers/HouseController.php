@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\price;
 use App\Models\House;
 use App\Models\House_property;
 use App\Models\Image;
-use Illuminate\Auth\Recaller;
+use Closure;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Pipeline;
 use Illuminate\Support\Facades\Validator;
 
 class HouseController extends Controller
@@ -48,5 +51,17 @@ class HouseController extends Controller
         });
         Image::insert($dataImages);
         return response()->json(['message' => 'House created'],200);
+    }
+
+    public function get_houses(Request $request){
+        $pip=[
+            price::class
+        ];
+        $houses=Pipeline::send( House::query())
+        ->through($pip)
+        ->thenReturn();
+
+
+        return $houses;
     }
 }
