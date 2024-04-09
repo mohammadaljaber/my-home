@@ -1,14 +1,10 @@
 <?php
-
-
 namespace App\Filters;
 
-use App\Models\House;
 use Closure;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 
-class price{
+class Price{
     public function handle(Builder $query,Closure $next)
     {
         if(request()->has('min_price')){

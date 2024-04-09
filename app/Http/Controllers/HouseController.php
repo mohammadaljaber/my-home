@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Filters\price;
+use App\Filters\Space;
 use App\Models\House;
 use App\Models\House_property;
 use App\Models\Image;
@@ -55,11 +56,12 @@ class HouseController extends Controller
 
     public function get_houses(Request $request){
         $pip=[
-            price::class
+            Price::class,
+            Space::class
         ];
         $houses=Pipeline::send( House::query())
         ->through($pip)
-        ->thenReturn();
+        ->thenReturn()->get();
 
 
         return $houses;
