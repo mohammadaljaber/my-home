@@ -23,8 +23,3 @@ class Price{
 
 
 
-
-// ->when(request()->has('min_price'),
-//         fn($q)=>$q->where('price','>=',request()->input('min_price')))
-//         ->when(request()->has('max_price'),
-//         fn($q)=>$q->where('price','<=',request()->input('max_price')));
