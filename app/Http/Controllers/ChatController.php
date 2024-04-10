@@ -42,8 +42,8 @@ class ChatController extends Controller
         return response()->json(['message'=>$request->message],200);
     }
 
-    public function receive_message(Request $request) {
-        Message::where('id',$request->id)->update([
+    public function receive_message($id) {
+        Message::where('id',$id)->update([
             'status' => '1',
         ]);
         return response()->json(['message' => 'message received'],200);

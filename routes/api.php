@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('login',[authcontroller::class,'login']);
 Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::post('send-message',[ChatController::class,'send']);
-    Route::post('recive_message',[ChatController::class,'recive_message']);
-    Route::post('read_message',[ChatController::class,'read_message']);
+    Route::get('receive_message/{id}',[ChatController::class,'receive_message']);
+    Route::get('read_message/{id}',[ChatController::class,'read_message']);
     Route::post('get_houses',[HouseController::class,'get_houses']);
 });

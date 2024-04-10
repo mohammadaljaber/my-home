@@ -66,4 +66,6 @@ class HouseController extends Controller
         ->thenReturn()->get();
         return response()->json($houses,200);
     }
+
+    
 }
