@@ -14,7 +14,7 @@ class House extends Model
         return $this->hasMany(Image::class,'house_id','id');
     }
     public function properties(){
-        return $this->belongsToMany(Property::class,'house_property','house_id')
+        return $this->belongsToMany(Property::class,'house_property','house_id','property_id')
         ->withPivot('value')
         ->withTimestamps();
     }

@@ -9,5 +9,10 @@ class Property extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function houses(){
+        return $this->belongsToMany(House::class,'house_property','property_id','house_id')
+        ->withPivot('value')
+        ->withTimestamps();
+    }
     
 }

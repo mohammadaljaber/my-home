@@ -10,6 +10,7 @@ use App\Models\House;
 use App\Models\House_property;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Pipeline;
 use Illuminate\Support\Facades\Validator;
 
@@ -66,6 +67,8 @@ class HouseController extends Controller
         ->thenReturn()->get();
         return response()->json($houses,200);
     }
+
+    
 
     
 }
