@@ -45,13 +45,13 @@ class HouseController extends Controller
             $object['house_id'] = $home->id;
             return $object;
         });
-        House_property::insert($dataProperties);
+        House_property::create($dataProperties);
         $dataImages = $request->images->map(function($object) use ($home) {
             $object['path'] = $object->file('image')->store('images', 'public');
             $object['house_id'] = $home->id;
             return $object;
         });
-        Image::insert($dataImages);
+        Image::create($dataImages);
         return response()->json(['message' => 'House created'],200);
     }
 
