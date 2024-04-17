@@ -9,14 +9,20 @@ use Illuminate\Database\Eloquent\Model;
 class House extends Model
 {
     use HasFactory;
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'properties'
+        
+    ];
     protected $guarded=[];
     public function images(){
         return $this->hasMany(Image::class,'house_id','id');
     }
     public function properties(){
         return $this->belongsToMany(Property::class,'house_property','house_id','property_id')
-        ->withPivot('value')
-        ->withTimestamps();
+        ->withPivot('value');
+        // ->withTimestamps();
     }
     protected $casts = [
         'ownership_type' =>ownership_type::class ,

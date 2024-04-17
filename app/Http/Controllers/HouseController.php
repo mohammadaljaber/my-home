@@ -120,7 +120,13 @@ class HouseController extends Controller
         
     }
 
-    
+    public function house_info($id){
+        $home=House::findorfail($id)->first();
+        return response()->json([
+            'house'=>$home,
+            'property'=>$home->properties
+        ],200);
+    }
 
     
 
