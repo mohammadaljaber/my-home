@@ -23,5 +23,7 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::get('receive_message/{id}',[ChatController::class,'receive_message']);
     Route::get('read_message/{id}',[ChatController::class,'read_message']);
     Route::post('get_houses',[HouseController::class,'get_houses']);
+    Route::put('house/update/{id}',[HouseController::class,'update']);
+
 });
 
