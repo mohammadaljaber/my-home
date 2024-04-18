@@ -122,9 +122,15 @@ class HouseController extends Controller
 
     public function house_info($id){
         $home=House::findorfail($id)->first();
+        $properties=array_map(function($property){
+            return [
+                'key'=>$property['key'],
+                'value'=>$property['pivot']['value'],
+            ];
+        },$home->properties->toArray());
         return response()->json([
             'house'=>$home,
-            'property'=>$home->properties
+            'property'=>$properties
         ],200);
     }
 
