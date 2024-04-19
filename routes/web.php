@@ -18,3 +18,4 @@ Route::get('/', function () {
     return view('Auth.login');
 });
 Route::post('admin/login',[AuthController::class,'login'])->name('login');
+Route::get('admin/dashboard',[AuthController::class,'dashboard'])->name('dashboard');
