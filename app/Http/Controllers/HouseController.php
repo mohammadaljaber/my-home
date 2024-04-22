@@ -81,7 +81,7 @@ class HouseController extends Controller
             'properties.*.value' => 'required',
             'images' => 'array',
             'images.*.is_main' => 'boolean',
-            'images.*.image' => 'required|image',
+            'images.*.image' => 'image',
         ];
         $validator = Validator::make($request->all(),$rules);
         if ($validator->fails())
