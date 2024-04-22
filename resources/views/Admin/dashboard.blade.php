@@ -1,7 +1,6 @@
-@extends('layouts.Urls')
-@section('content')
-@include('layouts.nav')
-@include('layouts.sidebar')
+
+@extends('layouts.main')
+@section('body')
   <!-- BEGIN: Content-->
   <div class="app-content content ">
     <div class="content-overlay"></div>
@@ -386,5 +385,4 @@
 </footer>
 <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
 <!-- END: Footer-->
-
 @endsection
