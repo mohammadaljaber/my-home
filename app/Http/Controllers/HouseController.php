@@ -35,6 +35,7 @@ class HouseController extends Controller
         if ($validator->fails()) 
             return response()->json($validator->errors(), 403);
         $dataHouse = [
+            'user_id'=>Auth::user()->id,
             'long_loc' => $request->long_loc,
             'lat_loc' => $request->lat_loc,
             'is_for_sell' => $request->is_for_sell,

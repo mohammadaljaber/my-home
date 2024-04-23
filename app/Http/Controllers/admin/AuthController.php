@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
+use App\Models\House;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -16,7 +18,11 @@ class AuthController extends Controller
             return back()->with('error',"You don't have Admin authority");
         return redirect()->route('dashboard');
     }
+
+
     public function dashboard(){
-        return view('Admin.dashboard');
+        $users=User::count();
+        $houses=House::count();
+        return view('Admin.dashboard',compact('houses','users'));
     }
 }

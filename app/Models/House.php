@@ -19,11 +19,17 @@ class House extends Model
     public function images(){
         return $this->hasMany(Image::class,'house_id','id');
     }
+
     public function properties(){
         return $this->belongsToMany(Property::class,'house_property','house_id','property_id')
         ->withPivot('value');
         // ->withTimestamps();
     }
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+    
     protected $casts = [
         'ownership_type' =>ownership_type::class ,
     ];

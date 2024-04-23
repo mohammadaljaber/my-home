@@ -42,7 +42,7 @@
                                         <i data-feather="users" class="font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="fw-bolder mt-1">92.6k</h2>
+                                <h2 class="fw-bolder mt-1">{{$users}}</h2>
                                 <p class="card-text">Users</p>
                             </div>
                             <div id="gained-chart"></div>
@@ -59,7 +59,7 @@
                                         <i data-feather="home" class="font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="fw-bolder mt-1">38.4K</h2>
+                                <h2 class="fw-bolder mt-1">{{$houses}}</h2>
                                 <p class="card-text">Houses</p>
                             </div>
                             <div id="order-chart"></div>
