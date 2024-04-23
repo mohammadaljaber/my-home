@@ -42,12 +42,14 @@
     <!-- END: Custom CSS-->
 
 </head>
-<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="blank-page">
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click"
+data-menu="vertical-menu-modern" data-col="">
 
     @yield('content')
 
  <!-- END: Content-->
-
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
 
      <!-- BEGIN: Vendor JS-->
      <script src="{{asset('app-assets/vendors/js/vendors.min.js')}}"></script>
