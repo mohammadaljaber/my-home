@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,7 @@ Route::get('/', function () {
 Route::post('admin/login',[AuthController::class,'login'])->name('login');
 Route::middleware('admin')->group(function(){
     Route::get('admin/dashboard',[AuthController::class,'dashboard'])->name('dashboard');
+    Route::get('admin/user',[UserController::class,'index'])->name('user');
 
 });
+

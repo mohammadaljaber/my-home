@@ -37,7 +37,7 @@
             </li>
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="users"></i>Users</a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('user')}}"><i data-feather="users"></i>Users</a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="home"></i>Houses</a>
             </li>
