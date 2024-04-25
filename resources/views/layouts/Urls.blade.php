@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
-
+@livewireStyles
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,5 +86,6 @@ data-menu="vertical-menu-modern" data-col="">
             }
         })
     </script>
+    @livewireScripts
 </body>
 </html> 

@@ -1,6 +1,3 @@
-@extends('layouts.main')
-@section('body')
-
 <div class="app-content content ">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
@@ -102,7 +99,7 @@
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <a class="dropdown-item" href="#">
                                                         <i data-feather="edit-2" class="me-50"></i>
-                                                        <span>Edit</span>
+                                                        <span>{{$user->status==1 ? 'Ban':'UnBannned'}}</span>
                                                     </a>
                                                     <a class="dropdown-item" href="#">
                                                         <i data-feather="trash" class="me-50"></i>
@@ -124,4 +121,3 @@
         </div>
     </div>
 </div>
-@endsection
