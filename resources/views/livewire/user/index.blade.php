@@ -69,7 +69,7 @@
                             <div class="d-flex justify-content-between align-items-center header-actions mx-2 row mt-75">
                                 <div class="col-sm-12 col-lg-4 d-flex justify-content-center justify-content-lg-start">
                                     <div class="dataTables_length" id="DataTables_Table_0_length">
-                                        <label>Show <select name="page"  wire:model="page" aria-controls="DataTables_Table_0" class="form-select">
+                                        <label>Show <select name="page"  wire:model.live="page" aria-controls="DataTables_Table_0" class="form-select">
                                             <option value="5" >5</option>
                                             <option value="10">10</option>
                                             <option value="15">15</option>
@@ -81,7 +81,7 @@
                                     <div class="dt-action-buttons d-flex align-items-center justify-content-center justify-content-lg-end flex-lg-nowrap flex-wrap">
                                         <div class="me-1">
                                             <div id="DataTables_Table_0_filter" class="dataTables_filter">
-                                                <label>Search:<input  wire:model="search" type="search" class="form-control" placeholder="" ></label>
+                                                <label>Search:<input  wire:model.live="search" type="search" class="form-control" placeholder="" ></label>
                                             </div>
                                         </div>
                                         
