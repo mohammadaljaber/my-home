@@ -57,7 +57,6 @@ data-menu="vertical-menu-modern" data-col="">
  
      <!-- BEGIN: Page Vendor JS-->
      <script src="{{asset('app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
-     <script src="{{asset('app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
      <script src="{{asset('app-assets/vendors/js/extensions/moment.min.js')}}"></script>
      <script src="{{asset('app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
      <script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>

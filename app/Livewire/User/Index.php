@@ -11,8 +11,20 @@ class Index extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
-    public $page,$search;
+    public $page,$search,$id;
 
+    public function set_id($id){
+        $this->id=$id;
+    }
+
+    public function reset_id(){
+        $this->id=null;
+    }
+
+    public function delete(){
+        User::destroy($this->id);
+        $this->reset_id();
+    }
 
     public function render()
     {

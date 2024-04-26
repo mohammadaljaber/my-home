@@ -1,4 +1,7 @@
+
+
 <div class="app-content content ">
+    @include('livewire.user.delete-model')
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper container-xxl p-0">
@@ -118,11 +121,14 @@
                                                     <i data-feather="more-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end">
+                                                    @if ($user->status==1)
                                                     <a class="dropdown-item" href="#">
                                                         <i data-feather="edit-2" class="me-50"></i>
-                                                        <span>{{$user->status==1 ? 'Ban':'UnBannned'}}</span>
+                                                        <span> Ban</span>
                                                     </a>
-                                                    <a class="dropdown-item" href="#">
+                                                    @endif
+                                                    
+                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"  wire:click="set_id({{$user->id}})" data-bs-target="#default">
                                                         <i data-feather="trash" class="me-50"></i>
                                                         <span>Delete</span>
                                                     </a>
@@ -142,3 +148,6 @@
         </div>
     </div>
 </div>
+
+
+
