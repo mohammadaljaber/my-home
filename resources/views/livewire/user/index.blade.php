@@ -69,12 +69,13 @@
                             <div class="d-flex justify-content-between align-items-center header-actions mx-2 row mt-75">
                                 <div class="col-sm-12 col-lg-4 d-flex justify-content-center justify-content-lg-start">
                                     <div class="dataTables_length" id="DataTables_Table_0_length">
-                                        <label>Show <select name="page"  wire:model.live="page" aria-controls="DataTables_Table_0" class="form-select">
+                                        Show : <label> <select name="page"  wire:model.live="page" aria-controls="DataTables_Table_0" class="form-select">
                                             <option value="5" >5</option>
                                             <option value="10">10</option>
                                             <option value="15">15</option>
                                             </select>
                                         </label>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-lg-8 ps-xl-75 ps-0">
