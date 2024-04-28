@@ -25,6 +25,11 @@ class Index extends Component
         User::destroy($this->id);
         $this->reset_id();
     }
+    public function ban(){
+        User::where('id',$this->id)->update([
+            'status'=>0
+        ]);
+    }
 
     public function render()
     {

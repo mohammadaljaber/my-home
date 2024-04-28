@@ -1,7 +1,7 @@
 
 
 <div class="app-content content ">
-    @include('livewire.user.delete-model')
+    @include('livewire.user.user-models')
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper container-xxl p-0">
@@ -122,7 +122,7 @@
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     @if ($user->status==1)
-                                                    <a class="dropdown-item" href="#">
+                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"  wire:click="set_id({{$user->id}})" data-bs-target="#ban">
                                                         <i data-feather="edit-2" class="me-50"></i>
                                                         <span> Ban</span>
                                                     </a>
