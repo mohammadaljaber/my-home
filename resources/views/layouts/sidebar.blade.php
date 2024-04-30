@@ -39,7 +39,7 @@
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('user')}}"><i data-feather="users"></i>Users</a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="home"></i>Houses</a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('houses')}}"><i data-feather="home"></i>Houses</a>
             </li>
             
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>

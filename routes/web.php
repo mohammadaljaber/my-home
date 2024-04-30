@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\UserController;
+use App\Livewire\House\Houses;
 use App\Livewire\User\Index;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,6 @@ Route::post('admin/login',[AuthController::class,'login'])->name('login');
 Route::middleware('admin')->group(function(){
     Route::get('admin/dashboard',[AuthController::class,'dashboard'])->name('dashboard');
     Route::get('admin/user',Index::class)->name('user');
+    Route::get('admin/house',Houses::class)->name('houses');
 });
 
