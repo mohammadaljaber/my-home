@@ -39,7 +39,24 @@
         <div class="content-body">
             <!-- Examples -->
             <section id="card-demo-example">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h3 class="fw-bolder mb-75">{{$houses_count}}</h3>
+                                    <span>Total Users</span>
+                                </div>
+                                <div class="avatar bg-light-primary p-50">
+                                    <span class="avatar-content">
+                                        <i data-feather="home" class="font-medium-4"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="row match-height">
+                    {{-- cards --}}
                     <div class="col-md-6 col-lg-4">
                         <div class="card">
                             <img class="card-img-top" src="../../../app-assets/images/slider/04.jpg" alt="Card image cap" />
@@ -52,6 +69,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </section>
         </div>
