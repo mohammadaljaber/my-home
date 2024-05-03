@@ -3,15 +3,17 @@
 use App\Http\Controllers\authcontroller;
 use App\Http\Controllers\ChatController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Controllers\HouseController;
 =======
 use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\VerificationController;
 >>>>>>> 3f8a982fd5929890dc2e1b7d5b951894b2d21930
+=======
+>>>>>>> ab66d28525224fbbef63d5839bcdccb07eca2497
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -24,13 +26,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum','verified')->get('/user',function(Request $request){
-    return $request->user();
-});
-
 Route::post('login',[authcontroller::class,'login']);
-Route::post('logout',[authcontroller::class,'logout'])->middleware('auth:sanctum');
-Route::post('register',[authcontroller::class,'createUser'])->middleware('guest');
 Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::post('send-message',[ChatController::class,'send']);
     Route::get('receive_message/{id}',[ChatController::class,'receive_message']);
@@ -39,6 +35,7 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::put('house/update/{id}',[HouseController::class,'update']);
     Route::get('house/info/{id}',[HouseController::class,'house_info']);
 });
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -54,3 +51,5 @@ Route::get('email/resend', [EmailVerificationController::class,'resend'])->name(
 Route::post('forgot-password',[PasswordResetController::class,'sendpasswordlink']);
 Route::post('Reset-password',[PasswordResetController::class,'reset']);
 >>>>>>> 3f8a982fd5929890dc2e1b7d5b951894b2d21930
+=======
+>>>>>>> ab66d28525224fbbef63d5839bcdccb07eca2497

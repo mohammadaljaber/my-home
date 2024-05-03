@@ -2,19 +2,13 @@
 
 namespace App\Models;
 
-use App\Notifications\ResetPasswordNotification;
-use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-//use Laravel\Passport\HasApiTokens;
 
-
-
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -24,13 +18,9 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'long_loc',
-        'lat_loc',
+        'name',
         'email',
         'password',
-        'role',
     ];
 
     /**
@@ -66,6 +56,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Message::class,'receiver_id','id');
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function houses(){
         return $this->hasMany(House::class,'user_id');
     }
@@ -80,4 +71,6 @@ class User extends Authenticatable implements MustVerifyEmail
     $this->notify(new ResetPasswordNotification($url));
 }
 >>>>>>> 3f8a982fd5929890dc2e1b7d5b951894b2d21930
+=======
+>>>>>>> ab66d28525224fbbef63d5839bcdccb07eca2497
 }
