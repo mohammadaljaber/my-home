@@ -55,7 +55,6 @@ class User extends Authenticatable
     public function mes_receiver(){
         return $this->hasMany(Message::class,'receiver_id','id');
     }
-
     public function houses(){
         return $this->hasMany(House::class,'user_id');
     }
