@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPasswordNotification;
+use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -62,4 +65,13 @@ class User extends Authenticatable implements MustVerifyEmail
     public function mes_receiver(){
         return $this->hasMany(Message::class,'receiver_id','id');
     }
+
+
+
+    public function sendPasswordResetNotification($token)
+{
+    $url = 'https://example.com/reset-password?token='.$token;
+
+    $this->notify(new ResetPasswordNotification($url));
+}
 }

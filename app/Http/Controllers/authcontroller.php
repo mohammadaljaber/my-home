@@ -18,24 +18,6 @@ use App\Notifications\EmailVerifictionNotification;
 
 class authcontroller extends Controller
 {
-    public function login(Request $request){
-
-        if(User::where('email',$request->email)->first()){
-            $data=$request->only('email','password');
-            if(Auth::attempt($data)){
-                $user=Auth::user();
-                $user->tokens()->delete();
-                $token = $user->createToken('apiToken')->plainTextToken;
-                return response()->json(['token'=>$token,'user'=>$user],200);
-            }else{
-                return response()->json(['message'=>'this password uncorrect'], 401);
-            }
-
-        }else{
-            return response()->json(['message'=>'this user not found'], 404);
-        }
-        
-    }
 
     public function createUser(Request $request){
 
@@ -78,4 +60,36 @@ class authcontroller extends Controller
 
         
     }
+////////////////////////////////////////////////////////////////
+
+
+
+    public function login(Request $request){
+
+        if(User::where('email',$request->email)->first()){
+            $data=$request->only('email','password');
+            if(Auth::attempt($data)){
+                $user=Auth::user();
+                $user->tokens()->delete();
+                $token = $user->createToken('apiToken')->plainTextToken;
+                return response()->json(['token'=>$token,'user'=>$user],200);
+            }else{
+                return response()->json(['message'=>'this password uncorrect'], 401);
+            }
+
+        }else{
+            return response()->json(['message'=>'this user not found'], 404);
+        }
+        
+    }
+    //////////////////////////////////////////////////////
+    public function logout(Request $request){
+        $request->user()->tokens()->delete();
+
+        return response()->json([
+            'status' => 'true',
+            'message' => 'Logout successfully',
+        ],200);
+    }
+
 }
