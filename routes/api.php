@@ -2,6 +2,16 @@
 
 use App\Http\Controllers\authcontroller;
 use App\Http\Controllers\ChatController;
+<<<<<<< HEAD
+<<<<<<< HEAD
+use App\Http\Controllers\HouseController;
+=======
+use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\VerificationController;
+>>>>>>> 3f8a982fd5929890dc2e1b7d5b951894b2d21930
+=======
+>>>>>>> ab66d28525224fbbef63d5839bcdccb07eca2497
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +29,27 @@ use Illuminate\Support\Facades\Route;
 Route::post('login',[authcontroller::class,'login']);
 Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::post('send-message',[ChatController::class,'send']);
-    Route::post('recive_message',[ChatController::class,'recive_message']);
-    Route::post('read_message',[ChatController::class,'read_message']);
+    Route::get('receive_message/{id}',[ChatController::class,'receive_message']);
+    Route::get('read_message/{id}',[ChatController::class,'read_message']);
+    Route::post('get_houses',[HouseController::class,'get_houses']);
+    Route::put('house/update/{id}',[HouseController::class,'update']);
+    Route::get('house/info/{id}',[HouseController::class,'house_info']);
 });
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+=======
+
+Route::post('email/verfification-notification',[EmailVerificationController::class,'sendVerificationEmail'])->middleware('auth:sanctum');
+Route::get('verify-email/{id}/{hash}',[EmailVerificationController::class,'verify'])->name('verification.verify')->middleware('auth:sanctum');
+Route::get('email/resend', [EmailVerificationController::class,'resend'])->name('verification.resend');
+
+///////////
+
+//password reset routes
+
+Route::post('forgot-password',[PasswordResetController::class,'sendpasswordlink']);
+Route::post('Reset-password',[PasswordResetController::class,'reset']);
+>>>>>>> 3f8a982fd5929890dc2e1b7d5b951894b2d21930
+=======
+>>>>>>> ab66d28525224fbbef63d5839bcdccb07eca2497

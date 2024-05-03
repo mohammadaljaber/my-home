@@ -9,9 +9,10 @@ class House_property extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    public function property(){
-        return $this->belongsTo(Property::class,'property_id','id');
-    } 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
     
     }
 
