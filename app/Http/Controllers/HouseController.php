@@ -129,6 +129,8 @@ class HouseController extends Controller
                 'value'=>$property['pivot']['value'],
             ];
         },$home->properties->toArray());
+
+        
         return response()->json([
             'house'=>$home,
             'property'=>$properties
