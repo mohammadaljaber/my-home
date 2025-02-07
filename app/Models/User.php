@@ -55,22 +55,8 @@ class User extends Authenticatable
     public function mes_receiver(){
         return $this->hasMany(Message::class,'receiver_id','id');
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
     public function houses(){
         return $this->hasMany(House::class,'user_id');
     }
-=======
 
-
-
-    public function sendPasswordResetNotification($token)
-{
-    $url = 'https://example.com/reset-password?token='.$token;
-
-    $this->notify(new ResetPasswordNotification($url));
-}
->>>>>>> 3f8a982fd5929890dc2e1b7d5b951894b2d21930
-=======
->>>>>>> ab66d28525224fbbef63d5839bcdccb07eca2497
 }
